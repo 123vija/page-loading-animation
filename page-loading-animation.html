@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <style>
+      #loading-spinner {
+         border: 5px solid rgb(0, 225, 255);
+         border-radius: 50%;
+         border-left-color: rgb(174, 0, 255);
+         width: 70px;
+         height: 70px;
+         margin: auto;
+         position: absolute;
+         top: 0;
+         bottom: 0;
+         left: 0;
+         right: 0;
+         animation: spinner 1s linear infinite;
+      }
+      @keyframes spinner {
+         100% {
+            transform: rotate(360deg);
+         }
+      }
+   </style>
+</head>
+<body>
+   <h2>in-development valueadd property</h2>
+   <div id = "loading-spinner"> </div>
+   <h3>Niles Station</h3>
+   <div class="rob-address">
+        <p>ADDRESS: 80 Harris Pl, Fremont, CA </p>
+        <p>TYPE: Multifamily</p>
+        <p>PHASE: Operations/ Renovations</p>
+    </div>
+   <img class="niles-station-img-style" src = "https://images.squarespace-cdn.com/content/552ddb1ee4b0ea5ecd75e82e/e24b2cb1-6a7d-4162-9421-c4679eeb572a/3b91ec03-1.jpg?content-type=image%2Fjpeg" alt = "niles-station">
+   <p> Riaz Capital’s roots go back two generations. Founder Riaz Taplin’s father was among a handful of entrepreneurs in the late 1970s who started the business of adding value to San Francisco buildings by converting them to condominiums. Riaz learned from his father the importance of creating value by mastering a niche that has strong demand, as it remains protected from market fluctuations. <br>
+    <br> A period of prosperity in the 1980s for the family business was bookended by two devastating black swan events: the high inflation and interest rates of the early 1980s, and the Loma Prieta earthquake in 1989, which was immediately followed by the recession of 1990-91. Several years later, after Riaz sold his first ‘flipper’ in Burlingame (at the age 16), another shock — this time the Asian financial crisis of 1998 — upended his hopes of profiting from the transaction. These black swan events, and others in the decades ahead, were instrumental in shaping Riaz’s approach to risk management.
+  </p>
+   <script>
+      document.onreadystatechange = function () {
+         if (document.readyState !== "complete") {
+            document.querySelector("body").style.visibility = "hidden";
+            document.getElementById("loading-spinner").style.visibility = "visible";
+         } else {
+            setTimeout(() => {
+               document.getElementById("loading-spinner").style.display ="none";
+               document.querySelector("body").style.visibility = "visible";
+            }, 1000)
+         }
+      };
+   </script>
+</body>
+</html>
